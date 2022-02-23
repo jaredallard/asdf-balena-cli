@@ -28,7 +28,7 @@ install_plugin() {
   cat >bin/balena <<EOF
 #!/usr/bin/env bash
 # Wrapper for balena
-exec "$install_path/balena-cli/balena"
+exec "$install_path/balena-cli/balena" "$@"
 EOF
   chmod +x bin/balena
   popd >/dev/null || exit 1
