@@ -17,9 +17,13 @@ install_plugin() {
   mkdir -p "${install_path}"
 
   echo "Downloading balena-cli from $download_url"
-  curl -L -s "$download_url" -o "$tmp_download_file"
+  curl -L "$download_url" -o "$tmp_download_file"
+
+  echo "Extracting downloaded archive ..."
   pushd "$install_path" >/dev/null || exit 1
   unzip -q "$tmp_download_file" || exit 1
+
+  echo "Creating shim"
   mkdir bin
   cat >bin/balena <<EOF
 #!/usr/bin/env bash

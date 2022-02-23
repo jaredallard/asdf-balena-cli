@@ -5,7 +5,7 @@
 ## Install
 
 ```
-asdf plugin-add balena-cli https://github.com/boakit-io/balena-cli.git
+asdf plugin-add balena-cli https://github.com/boatkit-io/asdf-balena-cli.git
 ```
 
 ## Use
