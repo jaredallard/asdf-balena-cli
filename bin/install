@@ -25,7 +25,12 @@ install_plugin() {
 
   echo "Creating shim"
   mkdir bin
-  ln "$install_path/balena-cli/balena" "$install_path/bin/balena"
+  cat >"$install_path/bin/balena" <<EOF
+#!/usr/bin/env bash
+exec "$install_path/balena-cli/balena" "\$@"
+
+EOF
+  chmod +x "$install_path/bin/balena"
   popd >/dev/null || exit 1
 }
 
