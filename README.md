@@ -1,4 +1,4 @@
-# asdf-tilt
+# asdf-balena-cli
 
 [`balena-cli`][util] plugin for [asdf](https://github.com/asdf-vm/asdf) version manager.
 
