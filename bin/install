@@ -61,12 +61,6 @@ get_download_url() {
   local platform=$(get_platform)
   local arch=$(get_arch)
 
-  # Currently no M1 mac builds, so just use the x64 version and assume
-  # that the user has Rosetta 2 setup.
-  if [ "$platform" == "macOS" ] && [ "$arch" == "arm64" ]; then
-    arch="x64"
-  fi
-
   # HACK: asdf wants numeric version numbers, but most start with a "v"
   # since people usually tag releases in GitHub with a vX.X.X and _not_ X.X.X
   # so need to prefix version based on this fragile logic :-/
