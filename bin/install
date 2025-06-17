@@ -69,7 +69,7 @@ get_download_url() {
     tag="v${tag}"
   fi
 
-  echo "https://github.com/balena-io/balena-cli/releases/download/${tag}/balena-cli-v${version}-${platform}-${arch}-standalone.zip"
+  echo "https://github.com/balena-io/balena-cli/releases/download/${tag}/balena-cli-v${version}-${platform}-${arch}-standalone.tar.gz"
 }
 
 install_plugin "$ASDF_INSTALL_TYPE" "$ASDF_INSTALL_VERSION" "$ASDF_INSTALL_PATH"
