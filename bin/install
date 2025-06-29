@@ -21,7 +21,7 @@ install_plugin() {
 
   echo "Extracting downloaded archive ..."
   pushd "$install_path" >/dev/null || exit 1
-  unzip -q "$tmp_download_file" || exit 1
+  tar -xzf "$tmp_download_file" || exit 1
 
   echo "Creating shim"
   mkdir bin
