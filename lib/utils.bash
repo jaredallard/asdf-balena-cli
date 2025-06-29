@@ -44,6 +44,7 @@ get_platform() {
 }
 
 get_arch() {
+  # shellcheck disable=SC2155
   local arch=$(uname -m)
   case "$arch" in
   amd64 | x86_64)
