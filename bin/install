@@ -8,4 +8,10 @@ plugin_dir=$(dirname "$(dirname "$current_script_path")")
 # shellcheck source=../lib/utils.bash
 source "${plugin_dir}/lib/utils.bash"
 
+# If we're looking for the latest version, translate it into the latest
+# version at the moment.
+if [[ "$ASDF_INSTALL_VERSION" == "latest" ]]; then
+  ASDF_INSTALL_VERSION=$("${plugin_dir}/bin/latest-stable")
+fi
+
 install_version "$ASDF_INSTALL_TYPE" "$ASDF_INSTALL_VERSION" "$ASDF_INSTALL_PATH"
