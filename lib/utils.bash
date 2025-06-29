@@ -97,12 +97,11 @@ install_version() {
     cp -r "$ASDF_DOWNLOAD_PATH"/* "$install_path"
 
     local tool_cmd="$TOOL_TEST"
-    test -x "$install_path/$tool_cmd" || fail "Expected $install_path/$tool_cmd to be executable."
     "$install_path/$tool_cmd" --help &>/dev/null || fail "Expected $install_path/$tool_cmd --help to succeed"
 
     echo "$TOOL_NAME $version installation was successful!"
   ) || (
-    rm -rf "$install_path"
+    # rm -rf "$install_path"
     fail "An error occurred while installing $TOOL_NAME $version."
   )
 }
